@@ -242,7 +242,181 @@ switch ($month) {
             break;
         default:
         echo "Invalid month <br>";
+} 
+
+//loops
+// 1. for loop
+//syntax
+// for (initialization; condition; increment/decrement) {
+//     code to be executed;
+// }
+// example
+//write a code to that prints odd numbers between 1 and 10
+for ($i = 1; $i <= 10; $i++) {
+    if ($i % 2 != 0) {
+        echo $i . "<br>";
+    }
 }
+// 2. while loop
+// syntax
+// while (condition) {
+//     code to be executed;
+// }
+// example
+//write a code that prints numbers divisible by 5 between 50 and 100
+$i = 50;
+while ($i <100) {
+    $i+=5;
+        echo $i . "<br>";
+    
+    
+}
+// 3. do while loop
+// syntax
+// do {
+//     code to be executed;
+// }
+// while (condition);
+// example
+//write a code to print even numbers between 2 and 14
+
+$i = 2;
+do {
+    if ($i % 2 == 0) {
+        echo $i . "<br>";
+    }
+    $i++;
+} while ($i <= 14);
+// 4. foreach loop
+// syntax
+// foreach ($array as $value) {
+//     code to be executed;
+// }
+// example
+//write a code that prints the elements of an array
+$colors = array("red", "green", "blue", "yellow", "purple", "pink");
+foreach ($colors as $value) {
+    echo $value . "<br>";
+}
+//using for each loop, write a code that prints all even numbers in the following array
+$numbers = array(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+foreach ($numbers as $value) {
+    if ($value % 2 == 0) {
+        echo $value . "<br>";
+    }
+}
+//arrays
+//arrays are used to store multiple values in a single variable
+//types of arrays
+// 1. indexed arrays
+//they have a numeric index starting from 0
+//define an array called colors that hold 4 colors of your choice
+$colors = array("red", "green", "blue", "yellow");
+// write a script that prints the colors in the array
+echo $colors[0] . "<br>";
+echo $colors[1] . "<br>";
+
+//write a script that that will create an empty array called fruits
+$fruits = array();
+//add the following fruits to the array: apple, banana, orange, mango
+$fruits[0] = "apple";
+$fruits[1] = "banana";
+$fruits[2] = "orange";
+$fruits[3] = "mango";
+//print the fruits in the array
+echo $fruits[0] . "<br>";
+
+//write a script that will remove the last fruit in the array
+array_pop($fruits);
+//print the fruits in the array
+echo $fruits[0] . "<br>";
+//wrie a script that will remove the first fruit in the array
+
+array_shift($fruits);
+//script to remove color green from the colors array
+unset($colors[1]);
+//script to sort the colors array
+sort($colors);
+//script to count the number of colors in the colors array
+echo count($colors) . "<br>";
+//script to check if the color red is in the colors array
+if (in_array("red", $colors)) {
+    echo "Red is in the array <br>";
+} else {
+    echo "Red is not in the array <br>";
+}
+//define an array called vehicle.Vehicle shoild have any 4 items initialized with it.Write a script that will add an additional 2 and remove the third indexed vehicle.Using while loop print all the items of the new array from ascending to descending order.
+$vehicle = array("car", "motorcycle", "bicycle", "plane");
+$vehicle[] = "ship";
+array_splice($vehicle, 2, 1);
+$length = count($vehicle);
+$i = 0;
+while ($i < $length) {
+    echo $vehicle[$i] . "<br>";
+    $i++;
+}
+// 2. associative arrays
+//they have a string index
+//write a script that shows any 3 attributes of yourself
+$attributes = array("name" => " Hedmon" => 21 "height" => 1.75);
+//write a script that prints the attributes
+echo $attributes["name"] . "<br>";
+echo $attributes["age"] . "<br>";
+echo $attributes["height"] . "<br>";
+
+//write a script that will add a new attribute to the attributes array
+$attributes["weight"] = 70;
+//write a script that will remove the age attribute from the attributes array
+unset($attributes["age"]);
+//write a script that will print the number of attributes in the attributes array
+
+echo count($attributes) . "<br>";
+//write a script that will check if the attribute name is in the attributes array
+if (array_key_exists("name", $attributes)) {
+    echo "Name is in the array <br>";
+    } else {
+        echo "Name is not in the array <br>";
+        }
+//write a script that will sort the attributes array
+uasort($attributes);
+
+//multidimensional arrays
+//they are arrays that contain other arrays
+//write an array called contacts that stores the following information about your contacts: email, phone number and 3 of the best friends
+$contacts = array(
+    array("email" => " hedmon@gmail.com", "phone" => "0712345678", "friends" => array("John", "Jane", "James")),
+    array("email" => " hedmon@yahoo.com", "phone" => "0712345679", "friends" => array("Jack", "Jill", "Jude")),
+    array("email" => " hedmon@hotmail.com", "phone" => "0712345670", "friends" => array("Juma", "Juma", "Juma"))
+);
+//write a script that prints the email of the second contact
+echo $contacts[1]["email"] . "<br>";
+//write a script that prints the phone number of the first contact
+echo $contacts[0]["phone"] . "<br>";
+//rewrite the same array using indexed arrays
+$contacts = array(
+    array(" email" => " hedmon@gmail.com", "phone" => "0712345678", " friends" => array("John", "Jane", "James")),
+    array(" email" => " hedmon@yahoo.com", "phone" => "0712345679", " friends" => array("Jack", "Jill", "Jude")),
+    array(" email" => " hedmon@hotmail.com", "phone" => "0712345670", " friends" => array("Juma", "Juma", "Juma"))
+    );
+    //write a script that prints the email of the second contact
+
+    echo $contacts[1][0] . "<br>";
+    //write a script that prints the phone number of the first contact
+    echo $contacts[0][1] . "<br>";
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
